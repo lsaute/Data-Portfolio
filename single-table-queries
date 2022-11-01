@@ -1,4 +1,4 @@
---In the following queries, I am using a database which contains data about some of Pixar's classic movies. The following exercises only involve the Movies table. This training was completed through SQLBolt.
+--In the following queries, I am using a database which contains data about some of Pixar's classic movies. The following exercises only involve the Movies table.
 
 --Find the title of each film
 SELECT title 
@@ -91,7 +91,7 @@ ORDER BY title ASC
 LIMIT 5
 OFFSET 5;
 
---In the following queries, I am using a database which contains data about some of the most populous cities in North America. The following exercises only involve the North_american_cities table. This training was completed through SQLBolt.
+--In the following queries, I am using a database which contains data about some of the most populous cities in North America. The following exercises only involve the North_american_cities table.
 
 --List all the Canadian cities and their populations
 SELECT * 
@@ -126,3 +126,46 @@ WHERE country = 'United States'
 ORDER by population desc
 LIMIT 2
 OFFSET 2;
+
+
+--In the following queries, I am using a database which contains data about employees of film studio. The following exercises only involve the Employees table.
+--Find the longest time that an employee has been at the studio
+SELECT * 
+FROM employees
+ORDER BY years_employed desc
+LIMIT 1;
+
+--For each role, find the average number of years employed by employees in that role
+SELECT
+    role,
+    AVG(years_employed)
+FROM employees
+GROUP BY role;
+
+--Find the total number of employee years worked in each building
+SELECT
+    building,
+    SUM(years_employed)
+FROM employees
+GROUP BY building;
+
+--Find the number of Artists in the studio (without a HAVING clause)
+SELECT 
+    role, 
+    COUNT(*) as Number_of_artists
+FROM employees
+WHERE role = "Artist";
+
+--Find the number of Employees of each role in the studio
+SELECT 
+    role, 
+    COUNT(*)
+FROM employees
+GROUP BY role;
+
+--Find the total number of years employed by all Engineers
+SELECT 
+    role, 
+    SUM(years_employed)
+FROM employees
+WHERE role = 'Engineer';
