@@ -49,6 +49,23 @@ SELECT title, year
 FROM movies
 WHERE year % 2 = 0;
 
+--Find the number of movies each director has directed
+SELECT
+    director,
+    COUNT(*)
+FROM movies
+GROUP BY director;
+
+--Find the total domestic and international sales that can be attributed to each director
+SELECT
+    m.director,
+    SUM(bo.domestic_sales + bo.international_sales) as total_sales
+FROM movies m
+JOIN boxoffice bo
+    ON m.id = bo.movie_id
+GROUP BY m.director;
+
+
 --In the following queries, I am using a database which contains data about employees of a film studio and their assigned office buildings. The following exercises only involve the Employees and Buildings table. This training was completed through SQLBolt.
 
 --Find the list of all buildings that have employees
