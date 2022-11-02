@@ -1,5 +1,5 @@
---This data set contains service request data from the 311 call center in Kansas City, MO from 2007 - March 2021
---https://data.kcmo.org/311/311-Call-Center-Service-Requests-2007-March-2021/7at3-sxhp
+--In the following queries, I am cleaning up a dataset that contains service request data from the 311 call center in Kansas City, MO from 2007 - March 2021.
+--Original data can be found here: https://data.kcmo.org/311/311-Call-Center-Service-Requests-2007-March-2021/7at3-sxhp
 
 SELECT *
 FROM dbo.KC_311_Requests_2007_2021
@@ -35,13 +35,12 @@ SET department = 'Parks & Rec'
 WHERE department = 'Parks & Recreation'
 	OR department = 'Parks and Rec';
 
-
---checking for and combining duplicate categories
-
+--checking for duplicate categories
 SELECT DISTINCT category
 FROM dbo.KC_311_Requests_2007_2021
 ORDER BY category asc;
 
+--combining duplicate categories
 UPDATE dbo.KC_311_Requests_2007_2021
 SET category = 'Animal'
 WHERE category = 'Animals / Pets';
