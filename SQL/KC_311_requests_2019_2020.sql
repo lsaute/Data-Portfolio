@@ -1,9 +1,11 @@
---In the following queries, I am cleaning a dataset that contains service request data from the 311 call center in Kansas City, MO from 2017 - 2020.
+--In the following queries, I am cleaning a dataset that contains service request data from the 311 call center in Kansas City, MO from 2019 - 2020.
 --Original data can be found here: https://data.kcmo.org/311/311-Call-Center-Service-Requests-2007-March-2021/7at3-sxhp
+--Next step is to use the clean data to prepare data visualizations in Tableau.
 
-SELECT *
+SELECT COUNT(CASE_ID) AS '2018'
 FROM dbo.KC_311_Requests_2007_2021
-ORDER BY creation_date desc;
+WHERE CREATION_DATE > '2018/01/01'
+	AND CREATION_DATE <'2019/01/01';
 
 --data cleanup
 ALTER TABLE dbo.KC_311_Requests_2007_2021
@@ -16,9 +18,9 @@ DROP COLUMN address_with_geocode,
 	_30_60_90_Days_Open_Window,
 	parcel_id_no;
 
---deleting records created before 2017
+--deleting records created before 2019
 DELETE FROM dbo.KC_311_Requests_2007_2021
-WHERE creation_date < '2017-01-01';
+WHERE creation_date < '2019-01-01';
 
 --deleting records created after 2020
 DELETE FROM dbo.KC_311_Requests_2007_2021
