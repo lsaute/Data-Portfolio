@@ -1,4 +1,4 @@
-# My Data Projects
+## My Data Projects
 
 Welcome to my data analytics portfolio! This respository contains examples of the work I have done with SQL and Tableau.
 
