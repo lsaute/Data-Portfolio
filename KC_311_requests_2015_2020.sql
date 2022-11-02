@@ -1,6 +1,5 @@
---In the following queries, I am cleaning a dataset that contains service request data from the 311 call center in Kansas City, MO from 2015 - 2020.
+--In the following queries, I am cleaning a dataset that contains service request data from the 311 call center in Kansas City, MO from 2017 - 2020.
 --Original data can be found here: https://data.kcmo.org/311/311-Call-Center-Service-Requests-2007-March-2021/7at3-sxhp
---Next step is to use the clean data to prepare data visualizations in Tableau.
 
 SELECT *
 FROM dbo.KC_311_Requests_2007_2021
@@ -16,6 +15,14 @@ DROP COLUMN address_with_geocode,
 	case_url,
 	_30_60_90_Days_Open_Window,
 	parcel_id_no;
+
+--deleting records created before 2017
+DELETE FROM dbo.KC_311_Requests_2007_2021
+WHERE creation_date < '2017-01-01';
+
+--deleting records created after 2020
+DELETE FROM dbo.KC_311_Requests_2007_2021
+WHERE creation_date > '2020-12-31';
 
 --Updating neighborhoods
 UPDATE dbo.KC_311_Requests_2007_2021
@@ -103,14 +110,6 @@ WHERE zip_code = 64151
 UPDATE dbo.KC_311_Requests_2007_2021
 SET county = 'Jackson'
 WHERE zip_code = 'ackson';
-
---deleting records created before 2015
-DELETE FROM dbo.KC_311_Requests_2007_2021
-WHERE creation_date < '2015-01-01';
-
---deleting records created after 2020
-DELETE FROM dbo.KC_311_Requests_2007_2021
-WHERE creation_date > '2020-12-31';
 
 --checking for duplicate departments
 SELECT DISTINCT department
