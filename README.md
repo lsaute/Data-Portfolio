@@ -3,8 +3,7 @@
 Welcome to my data analytics portfolio! This respository contains examples of the work I have done with SQL and Tableau.
 
 ### 📊 Data Projects
-- [KC 311 Requests](https://github.com/lsaute/Data-Portfolio/tree/main/KC%20311%20Requests)
-
+- [KC 311 Requests](https://github.com/lsaute/Data-Portfolio/tree/main/KC%20311%20Requests) - For this project, I downloaded raw data from OpenDataKC. The original dataset contained service request data from the 311 call center in Kansas City, MO from 2006-2021. I cleaned and organized the data using Microsoft SQL Server and reduced the scope to only requests created in 2019-2020. I extracted the information in a .csv file and uploaded to Tableau Public where I created visualizations and a dashboard.
 
 ### 📖 Learning & Achievements
 - [SQLBolt](https://sqlbolt.com/) Training
