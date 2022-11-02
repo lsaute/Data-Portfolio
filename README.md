@@ -2,6 +2,10 @@
 
 Welcome to my data analytics portfolio! This respository contains examples of the work I have done with SQL and Tableau.
 
+### 📊 Data Projects
+- [KC 311 Requests](https://github.com/lsaute/Data-Portfolio/tree/main/KC%20311%20Requests)
+
+
 ### 📖 Learning & Achievements
 - [SQLBolt](https://sqlbolt.com/) Training
 - [SQL for Non-Programmers](https://www.linkedin.com/learning-login/share?forceAccount=false&redirect=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Fsql-for-non-programmers%3Ftrk%3Dshare_ent_url%26shareId%3D0D9Cr80xTgWObZHmW9gZ1w%253D%253D)
