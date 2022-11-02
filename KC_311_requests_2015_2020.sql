@@ -17,6 +17,93 @@ DROP COLUMN address_with_geocode,
 	_30_60_90_Days_Open_Window,
 	parcel_id_no;
 
+--Updating neighborhoods
+UPDATE dbo.KC_311_Requests_2007_2021
+SET neighborhood = '18th And Vine And Downtown East'
+WHERE neighborhood = '18th And Vine And Downtown Eas';
+
+UPDATE dbo.KC_311_Requests_2007_2021
+SET neighborhood = 'Blenheim Square Research Hospital'
+WHERE neighborhood = 'Blenheim Square Research Hospi';
+
+UPDATE dbo.KC_311_Requests_2007_2021
+SET neighborhood = 'Central Blue Valley And Park Tower Gardens'
+WHERE neighborhood = 'Central Blue Valley And Park T';
+
+UPDATE dbo.KC_311_Requests_2007_2021
+SET neighborhood = 'Country Club Estates And Big Shoal'
+WHERE neighborhood = 'Country Club Estates And Big S';
+
+UPDATE dbo.KC_311_Requests_2007_2021
+SET neighborhood = 'Country Club District'
+WHERE neighborhood = 'Country Club';
+
+UPDATE dbo.KC_311_Requests_2007_2021
+SET neighborhood = 'Linden Hills And Indian Heights'
+WHERE neighborhood = 'Linden Hills And Indian Height';
+
+UPDATE dbo.KC_311_Requests_2007_2021
+SET neighborhood = 'Line Creek And Northern Heights'
+WHERE neighborhood = 'Line Creek And Northern Height';
+
+UPDATE dbo.KC_311_Requests_2007_2021
+SET neighborhood = 'Marlborough Heights/Marlborough Pride'
+WHERE neighborhood = 'Marlborough Heights/Marlboroug';
+
+UPDATE dbo.KC_311_Requests_2007_2021
+SET neighborhood = 'Palestine West And Oak Park Northeast'
+WHERE neighborhood = 'Palestine West And Oak Park No';
+
+--Updating county names and zip codes
+SELECT *
+FROM dbo.KC_311_Requests_2007_2021
+WHERE zip_code = 64101
+
+UPDATE dbo.KC_311_Requests_2007_2021
+SET county = 'Jackson'
+WHERE zip_code = 64101
+	OR zip_code = 64102
+	OR zip_code = 64105
+	OR zip_code = 64106
+	OR zip_code = 64108
+	OR zip_code = 64109
+	OR zip_code = 64110
+	OR zip_code = 64111
+	OR zip_code = 64112
+	OR zip_code = 64113
+	OR zip_code = 64114
+	OR zip_code = 64120
+	OR zip_code = 64123
+	OR zip_code = 64124
+	OR zip_code = 64125
+	OR zip_code = 64126
+	OR zip_code = 64127
+	OR zip_code = 64128
+	OR zip_code = 64129
+	OR zip_code = 64130
+	OR zip_code = 64131
+	OR zip_code = 64132
+	OR zip_code = 64133
+	OR zip_code = 64134
+	OR zip_code = 64136
+	OR zip_code = 64137
+	OR zip_code = 64138
+	OR zip_code = 64139
+	OR zip_code = 64145
+	OR zip_code = 64146
+	OR zip_code = 64149;
+
+UPDATE dbo.KC_311_Requests_2007_2021
+SET county = 'Platte'
+WHERE zip_code = 64151
+	OR zip_code = 64152
+	OR zip_code = 64153
+	OR zip_code = 64154;
+
+UPDATE dbo.KC_311_Requests_2007_2021
+SET county = 'Jackson'
+WHERE zip_code = 'ackson';
+
 --deleting records created before 2015
 DELETE FROM dbo.KC_311_Requests_2007_2021
 WHERE creation_date < '2015-01-01';
@@ -36,9 +123,7 @@ SET department = 'Parks & Rec'
 WHERE department = 'Parks & Recreation'
 	OR department = 'Parks and Rec';
 
-
 --checking for and combining duplicate categories
-
 SELECT DISTINCT category
 FROM dbo.KC_311_Requests_2007_2021
 ORDER BY category asc;
