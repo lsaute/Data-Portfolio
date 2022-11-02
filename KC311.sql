@@ -1,5 +1,6 @@
 --In the following queries, I am cleaning up a dataset that contains service request data from the 311 call center in Kansas City, MO from 2007 - March 2021.
 --Original data can be found here: https://data.kcmo.org/311/311-Call-Center-Service-Requests-2007-March-2021/7at3-sxhp
+--Next step is to use the clean data to prepare data visualizations in Tableau.
 
 SELECT *
 FROM dbo.KC_311_Requests_2007_2021
