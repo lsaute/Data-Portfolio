@@ -1,3 +1,5 @@
+## Project Description
+
 For this project, I downloaded raw data from [OpenDataKC](https://data.kcmo.org/311/311-Call-Center-Service-Requests-2007-March-2021/7at3-sxhp). 
 This data set contained service request data from the 311 call center in Kansas City, MO from 2006-2021.
 I cleaned and organized the data using Microsoft SQL Server and reduced the scope to only requests created in 2019-2020. 
