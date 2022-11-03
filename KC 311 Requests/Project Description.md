@@ -5,5 +5,5 @@ This data set contained service request data from the 311 call center in Kansas 
 I cleaned and organized the data using Microsoft SQL Server and reduced the scope to only requests created in 2019-2020. 
 I extracted the information in a .csv file and uploaded to Tableau Public where I created visualizations and a dashboard.
 
---SQL: https://github.com/lsaute/Data-Portfolio/blob/main/KC%20311%20Requests/SQL_KC_311_requests_2019_2020.sql
---Tableau Public: https://public.tableau.com/app/profile/lacy.saute/viz/KC311CallCenterRequests2019-2020/311CallsDashboard
+- [SQL syntax](https://github.com/lsaute/Data-Portfolio/blob/main/KC%20311%20Requests/SQL_KC_311_requests_2019_2020.sql)
+- [Viz on Tableau Public](https://public.tableau.com/app/profile/lacy.saute/viz/KC311CallCenterRequests2019-2020/311CallsDashboard)
