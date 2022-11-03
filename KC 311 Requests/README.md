@@ -7,3 +7,4 @@ I extracted the information in a .csv file and uploaded to Tableau Public where 
 
 - [SQL syntax](https://github.com/lsaute/Data-Portfolio/blob/main/KC%20311%20Requests/SQL_KC_311_requests_2019_2020.sql)
 - [Viz on Tableau Public](https://public.tableau.com/app/profile/lacy.saute/viz/KC311CallCenterRequests2019-2020/311CallsDashboard)
+
